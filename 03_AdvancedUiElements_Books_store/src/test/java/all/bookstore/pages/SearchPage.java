@@ -65,7 +65,8 @@ public class SearchPage extends Page {
     }
 
     public Boolean getSearchResult() {
-        wait.until(driver -> !(cards.size() == 1));
-           return false;
+      if(wait.until(driver -> !(cards.size() == 1))) {
+          return false;
+      } else return true;
     }
 }
