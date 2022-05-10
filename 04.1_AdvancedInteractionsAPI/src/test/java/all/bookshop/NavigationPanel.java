@@ -32,7 +32,6 @@ public class NavigationPanel extends Page {
                 .perform();
         wait.until(ExpectedConditions.visibilityOf(allBooksButton));
         allBooksButton.click();
-
     }
 
     public void moveToAllBooks() {
