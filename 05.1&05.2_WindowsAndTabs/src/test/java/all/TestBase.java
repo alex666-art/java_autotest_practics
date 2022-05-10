@@ -11,11 +11,28 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class TestBase {
     protected WebDriver driver;
     protected WebDriverWait wait;
+    public String initialWindow;
+
+    public Set<String> getAllWindows() {
+        return driver.getWindowHandles();
+    }
+
+    public void switchToFirstWindow() {
+        var newWindows = getAllWindows().stream().filter(i -> !i.equals(initialWindow)).collect(Collectors.toSet());
+        //driver.switchTo().window(otherWindows.iterator().next());
+        driver.switchTo().window(newWindows.stream().findFirst().get());
+    }
+
+    public void switchToWindow(String windowId) {
+        driver.switchTo().window(windowId);
+    }
 
     @BeforeEach
     public void setUp() {
@@ -26,6 +43,7 @@ public class TestBase {
         options.addArguments("incognito");
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         driver = new ChromeDriver(options);
+        initialWindow = driver.getWindowHandle();
         wait = new WebDriverWait(driver, 5);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }

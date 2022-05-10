@@ -41,4 +41,8 @@ public class MainPage extends Page {
             textInput.sendKeys("Тестовый текст заметки");
             addNoteButton.click();
     }
+
+    public String getPageUrl() {
+        return url;
+    }
 }
