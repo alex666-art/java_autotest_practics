@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="AdvancedSeleniumTests" />
+        <module name="05.1&amp;05.2_WindowsAndTabs" />
         <module name="04.2_Scroll" />
         <module name="05.1_WindowsAndTabs" />
         <module name="Source-base" />
