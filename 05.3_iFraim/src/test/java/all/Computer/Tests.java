@@ -60,4 +60,6 @@ public class Tests extends TestBase {
         //assert
         Assertions.assertTrue(page.emailInput.isDisplayed(), "Не отображается поле для ввода email!");
     }
+
+
 }
