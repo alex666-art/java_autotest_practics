@@ -21,9 +21,8 @@ public class Tests extends TestBase {
         alert.accept();
         //assert
         var newAlert = driver.switchTo().alert();
-        var expectedText = "Email успешно изменён на " + newEmail;
+        var expectedText = "E-mail успешно изменён на " + newEmail;
         var actualText = newAlert.getText();
-        newAlert.accept();
         Assertions.assertEquals(expectedText, actualText, "Не отображается новый email!");
     }
 }
