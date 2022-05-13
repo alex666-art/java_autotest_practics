@@ -19,7 +19,7 @@ public class TestBase {
 
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_mac");
+        System.setProperty("webdriver.chrome.driver", "drivers//chromedriver.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         var options = new ChromeOptions();
         options.addArguments("--start-maximized");
@@ -46,6 +46,6 @@ public class TestBase {
 
     public void takeScreenshot() throws IOException {
         var sourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(sourceFile, new File("Screenshots/screenShots"));
+        FileUtils.copyFile(sourceFile, new File("Screenshots//screenShots"));
     }
 }

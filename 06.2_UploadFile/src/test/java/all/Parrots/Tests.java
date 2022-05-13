@@ -11,7 +11,7 @@ public class Tests extends TestBase {
         var page = new MainPage(driver, wait);
         page.open();
         //act
-        var file = System.getProperty("user.dir") + "/file/butterfly_PNG1017.png";
+        var file = System.getProperty("user.dir") + "//file//butterfly_PNG1017.png";
         page.uploadFile(file);
         //assert
         Assertions.assertTrue(page.okIcon.isDisplayed(), "файл не загрузился!");
